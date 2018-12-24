@@ -1,0 +1,22 @@
+{
+  "id": "/mining/cuda-ccminer-mtp-api",
+  "cmd": "/root/multi-process-launcher/multi-process-launcher.py --cmd \"/root/start-apache2.sh $PORT1 $PORT0\" --cmd \"/usr/bin/ccminer -a mtp -o stratum+tcp://zcoin.mintpond.com:3000 -u aAQuL87ZehGSvXetp3JCmZWXmnWfkdkC9Q.pkg -p x --api-bind=0.0.0.0:$PORT1\"",
+  "user": "root",
+  "cpus": 0.5,
+  "gpus": 3,
+  "mem": 8192,
+  "disk": 500,
+  "ports": [ 0, 0 ],
+  "instances": 0,
+  "container": {
+    "type": "MESOS",
+    "docker": {
+      "image": "acecile/cuda-ccminer-mtp-cuda9-api:latest",
+      "forcePullImage": true
+    }
+  },
+  "upgradeStrategy": {
+    "maximumOverCapacity": 0,
+    "minimumHealthCapacity": 0
+   }
+}

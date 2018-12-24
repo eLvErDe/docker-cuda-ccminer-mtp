@@ -1,0 +1,20 @@
+{
+  "id": "/mining/cuda-ccminer-mtp",
+  "cmd": "/usr/bin/ccminer -a mtp -o stratum+tcp://zcoin.mintpond.com:3000 -u aAQuL87ZehGSvXetp3JCmZWXmnWfkdkC9Q.pkg -p x --api-bind=0.0.0.0:4068",
+  "cpus": 0.1,
+  "gpus": 1,
+  "mem": 8192,
+  "disk": 5000,
+  "instances": 1,
+  "container": {
+    "type": "MESOS",
+    "docker": {
+      "image": "acecile/cuda-ccminer-mtp-cuda9:latest",
+      "forcePullImage": true
+    }
+  },
+  "upgradeStrategy": {
+    "maximumOverCapacity": 0,
+    "minimumHealthCapacity": 0
+  }
+}
