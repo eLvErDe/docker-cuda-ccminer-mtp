@@ -12,7 +12,7 @@ This MTP algo need much more memory than usual, so if it crashes you're problabl
 It provides the PHP files connecting the TCP api and embed Apache2+PHP as well as a Python wrapper I made myself to start both Apache2 and CCMiner.
 
 ```
-nvidia-docker run -dt --restart=unless-stopped -p 4068:4068 -p 4069:4069 --name cuda-xvg-ccminer acecile/cuda-ccminer-mtp-cuda9-api /root/multi-process-launcher/multi-process-launcher.py --cmd '/root/start-apache2.sh 4068 4069' --cmd '/usr/bin/ccminer -a mtp -o stratum+tcp://zcoin.mintpond.com:3000 -u aAQuL87ZehGSvXetp3JCmZWXmnWfkdkC9Q.pkg -p x --api-bind=0.0.0.0:4068'
+nvidia-docker run -dt --restart=unless-stopped -p 4068:4068 -p 4069:4069 --name cuda-xzc-ccminer acecile/cuda-ccminer-mtp-cuda9-api /root/multi-process-launcher/multi-process-launcher.py --cmd '/root/start-apache2.sh 4068 4069' --cmd '/usr/bin/ccminer -a mtp -o stratum+tcp://zcoin.mintpond.com:3000 -u aAQuL87ZehGSvXetp3JCmZWXmnWfkdkC9Q.pkg -p x --api-bind=0.0.0.0:4068'
 ```
 
 You can now access status page at http://you.host:4069 and live hashrate graphs at http://you.host:4069/websocket.htm (yes, .htm it's not a typo).
